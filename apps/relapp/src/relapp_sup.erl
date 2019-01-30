@@ -37,7 +37,8 @@ init([]) ->
              {relapp_srv2, {relapp_srv2, start_link, []},
               transient, 5000, worker, [relapp_srv2]},
              {relapp_app_sup, {relapp_app_sup, start_link, []},
-              transient, 5000, supervisor, [relapp_app_sup]}
+              transient, 5000, supervisor, [relapp_app_sup]},
+             #{id => a_server, start => {a_server, start_link, []}}
          ]}}.
 
 %%====================================================================
